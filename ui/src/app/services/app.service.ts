@@ -25,4 +25,10 @@ constructor(private http: HttpClient) { }
     return apiRequest;
   }
 
+  postApiWithHeadersCall(url, params, headers){
+    const requestUrl = url;
+    const apiRequest = this.http.post(requestUrl, params, headers);
+    return apiRequest;
+  }
+
 }

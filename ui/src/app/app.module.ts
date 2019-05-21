@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthModule } from './auth/auth.module';
+import { SecModule } from './sec/sec.module';
+import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -14,8 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    SecModule
   ],
   providers: [],
   bootstrap: [AppComponent]

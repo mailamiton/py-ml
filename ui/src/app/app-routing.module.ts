@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './sec/dashboard/dashboard.component';
+import {urlConstant} from './app.enum';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo : '/login',
+    redirectTo : urlConstant.NON_SEC,
     pathMatch : 'full'
   },
   {
-    path:'login',
-    component : LoginComponent
+    path: urlConstant.NON_SEC,
+    loadChildren: './non-sec/non-sec.module#NonSecModule',
+  },
+  {
+    path:'**',
+    redirectTo : urlConstant.NON_SEC,
+    pathMatch : 'full'
   }
 ];
 
