@@ -8,6 +8,7 @@ Created on Thu Apr 18 20:11:27 2019
 
 from flask import Flask, render_template , jsonify
 from data import Employee
+from setup import setupData
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,8 +20,13 @@ emp = Employee()
 @app.route('/employee')
 def employee():
   print('Hello world!', emp[0])
-  return jsonify(emp[0])
-    
+  return jsonify(emp[0]);
+
+setupData = setupData()
+@app.route('/setup')
+def setup():
+  return jsonify({"Setup" : "Setup is Complete !!"});
+
 
 if __name__ == '__main__':
     app.run(debug=True)

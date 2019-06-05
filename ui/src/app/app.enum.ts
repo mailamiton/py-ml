@@ -11,5 +11,6 @@ export enum appConstant {
 
 export enum urlConstant {
     LOGIN = "login",
-    NON_SEC = "nonsec"
+    NON_SEC = "nonsec",
+    SEC = "sec"
 }

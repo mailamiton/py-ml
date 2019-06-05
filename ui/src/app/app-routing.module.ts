@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: './non-sec/non-sec.module#NonSecModule',
   },
   {
+    path: urlConstant.SEC,
+    loadChildren: './sec/sec.module#SecModule',
+  },
+  {
     path:'**',
     redirectTo : urlConstant.NON_SEC,
     pathMatch : 'full'
